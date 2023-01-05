@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const _ = require("highland");
 const url = require("url");
-const mapStackTrace = require("sourcemapped-stacktrace-node").default;
+const mapStackTrace = require("sourcemapped-stacktrace-test").default;
 const path = require("path");
 const fs = require("fs");
 const { createTracker, augmentTimeoutError } = require("./tracker");
