@@ -1,9 +1,12 @@
 {
   "name": "react-snap-test",
-  "version": "1.23.4",
+  "version": "1.23.5",
   "description": "Zero-configuration framework-agnostic static prerendering for SPAs",
   "main": "index.js",
-  "author": "marcoandre1",
+  "author": "stereobooster",
+  "contributors": [
+    "marcoandre1"
+  ],
   "license": "MIT",
   "repository": "https://github.com/marcoandre1/react-snap",
   "engines": {
