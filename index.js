@@ -8,7 +8,7 @@ const nativeFs = require("fs");
 const mkdirp = require("mkdirp");
 const minify = require("html-minifier").minify;
 const url = require("url");
-const minimalcss = require("minimalcss");
+const minimalcss = require("minimalcss-test");
 const CleanCSS = require("clean-css");
 const twentyKb = 20 * 1024;
 
