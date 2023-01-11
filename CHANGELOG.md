@@ -1,3 +1,8 @@
+# 1.23.8
+
+- Bump minimalcss-test from 0.11.5 to 0.11.6 (@marcoandre1)
+- Bump sourcemapped-stacktrace-test from 2.1.11 to 2.1.12 (@marcoandre1)
+
 # 1.23.7
 
 - Bumped minimalcss version 0.8.3 to minimalcss-test 0.11.5 (@marcoandre1)

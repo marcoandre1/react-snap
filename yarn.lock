@@ -2485,10 +2485,10 @@ mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-minimalcss-test@^0.11.5:
-  version "0.11.5"
-  resolved "https://registry.yarnpkg.com/minimalcss-test/-/minimalcss-test-0.11.5.tgz#c582872944e91fe5047a121d452c6225460b6c68"
-  integrity sha512-VB3OH8TAVJIDrDrLx4ga/ADP3G7ma7YOv1PpWbntAFSm2fRLwPknSVgrXlNHwg9rjyTm7Yr1eVlaK8W/1FHJKg==
+minimalcss-test@^0.11.6:
+  version "0.11.6"
+  resolved "https://registry.yarnpkg.com/minimalcss-test/-/minimalcss-test-0.11.6.tgz#e4a0499b1cad21e4a6bd9684f30c931e3877be3b"
+  integrity sha512-+TAEvlAk9b7MFkD0scnMampPDISm9w2x5zFz7mDXqFk879eZQ5kGc6r8Xig0zFo9lTo+kPCDqapgpVlmrzTCTA==
   dependencies:
     cheerio "^1.0.0-rc.12"
     css-tree "1.0.0-alpha.39"
@@ -3103,10 +3103,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
-sourcemapped-stacktrace-test@^2.1.11:
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/sourcemapped-stacktrace-test/-/sourcemapped-stacktrace-test-2.1.11.tgz#442582013cc592fbe9ed1386e5c6c3b402448705"
-  integrity sha512-JKTCabtTWC5Thfu/scs2Nj9p+s1MHe7HnZM6MC6fXLMBziH9sP0/lhwLAVnrN0SCRnxrxFd3/U8p9SfhfD5iDg==
+sourcemapped-stacktrace-test@^2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/sourcemapped-stacktrace-test/-/sourcemapped-stacktrace-test-2.1.12.tgz#ff57e81419dd957ccc25bf1051dd18925ea549b3"
+  integrity sha512-YYB9JVn/VYG0bDjD04yQob3McSd9A8SxXSm3UMWnrvwOliuepB4Vngifgf/5NEQUPtoTnsSJ5bmKjrQCKO8EIQ==
   dependencies:
     es6-promise "^4.1.1"
     isomorphic-fetch "^3.0.0"
