@@ -1,3 +1,10 @@
+# 1.23.7
+
+- Bumped minimalcss version 0.8.3 to minimalcss-test 0.11.5 (@marcoandre1)
+- Bumped sourcemapped-stacktrace-node version 2.1.8 to sourcemapped-stacktrace-test 2.1.9 (@marcoandre1)
+- Bumped express and mkdirp with carret (^)
+- Bumped puppeteer version from 2.0.0 to 19.4.1 (@marcoandre1)
+
 # 1.23.0
 
 - Potential fix for #301 illegal operation on a directory (#317)

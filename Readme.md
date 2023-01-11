@@ -1,4 +1,8 @@
-# react-snap [![Build Status](https://travis-ci.org/stereobooster/react-snap.svg?branch=master)](https://travis-ci.org/stereobooster/react-snap) [![npm](https://img.shields.io/npm/v/react-snap.svg)](https://www.npmjs.com/package/react-snap) ![npm](https://img.shields.io/npm/dt/react-snap.svg) [![Twitter Follow](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow)](https://twitter.com/stereobooster)
+# react-snap
+
+⚠️ This is a lazy fork of [react-snap](https://github.com/stereobooster/react-snap). It is just a version with updated dependencies. **Will try to keep dependencies updated, but no development in the near future.**
+
+> **NOTE**: might not work as expected because of dependency updates but tests seem to run smoothly. Create an issue on my repo if you have a specific case that is now not supported because of dependency updates.
 
 Pre-renders a web app into static HTML. Uses [Headless Chrome](https://github.com/GoogleChrome/puppeteer) to crawl all available links starting from the root. Heavily inspired by [prep](https://github.com/graphcool/prep) and [react-snapshot](https://github.com/geelen/react-snapshot), but written from scratch. Uses best practices to get the best loading performance.
 
