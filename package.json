@@ -8,9 +8,20 @@
     "marcoandre1 <hello@modokemdev.com>"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/marcoandre1/react-snap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcoandre1/react-snap"
+    "url": "https://github.com/marcoandre1/react-snap.git"
+  },
+  "keywords": [
+    "css",
+    "web-perf",
+    "web-performance",
+    "optimizer",
+    "ssr"
+  ],
+  "bugs": {
+    "url": "https://github.com/marcoandre1/react-snap/issues"
   },
   "engines": {
     "node": ">= 8.6.0"
