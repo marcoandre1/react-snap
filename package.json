@@ -1,6 +1,6 @@
 {
   "name": "react-snap-test",
-  "version": "1.23.8",
+  "version": "1.23.9",
   "description": "Zero-configuration framework-agnostic static prerendering for SPAs",
   "main": "index.js",
   "author": "stereobooster",
@@ -8,9 +8,20 @@
     "marcoandre1 <hello@modokemdev.com>"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/marcoandre1/react-snap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcoandre1/react-snap"
+    "url": "https://github.com/marcoandre1/react-snap.git"
+  },
+  "keywords": [
+    "css",
+    "web-perf",
+    "web-performance",
+    "optimizer",
+    "ssr"
+  ],
+  "bugs": {
+    "url": "https://github.com/marcoandre1/react-snap/issues"
   },
   "engines": {
     "node": ">= 8.6.0"
@@ -21,10 +32,10 @@
     "express-history-api-fallback": "2.2.1",
     "highland": "2.13.4",
     "html-minifier": "4.0.0",
-    "minimalcss-test": "^0.11.6",
+    "minimalcss-test": "^0.11.7",
     "mkdirp": "^0.5.1",
-    "puppeteer": "19.4.1",
-    "serve-static": "1.14.1",
+    "puppeteer": "^23.4.0",
+    "serve-static": "^2.1.0",
     "sourcemapped-stacktrace-test": "^2.1.12"
   },
   "devDependencies": {
