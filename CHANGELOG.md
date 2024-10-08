@@ -1,3 +1,9 @@
+# 1.23.9
+
+- Bump minimalcss-test from 0.11.6 to 0.11.7 (@marcoandre1)
+- Bump puppeteer from 19.4.1 to 23.4.0 (@marcoandre1)
+- Bump serve-static from 1.14.1 tot 2.1.0
+
 # 1.23.8
 
 - Bump minimalcss-test from 0.11.5 to 0.11.6 (@marcoandre1)
