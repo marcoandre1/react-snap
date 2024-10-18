@@ -11,15 +11,15 @@ const mockFs = () => {
   const fs = {
     existsSync: nativeFs.existsSync,
     createReadStream: path => {
-      createReadStreamMock(path.replace(cwd, ""));
+      createReadStreamMock(path.replace(cwd, "").replace(/\\/g, "/"));
       return nativeFs.createReadStream(path);
     },
     createWriteStream: path => {
-      createWriteStreamMock(path.replace(cwd, ""));
+      createWriteStreamMock(path.replace(cwd, "").replace(/\\/g, "/"));
       return devNullStream;
     },
     writeFileSync: (path, content) => {
-      writeFileSyncMock(path.replace(cwd, ""), content);
+      writeFileSyncMock(path.replace(cwd, "").replace(/\\/g, "/"), content);
     }
   };
   const filesCreated = () => writeFileSyncMock.mock.calls.length;
