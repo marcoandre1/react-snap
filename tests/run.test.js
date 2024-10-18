@@ -76,8 +76,8 @@ describe("saveAs png", () => {
   beforeAll(() => snapRun(mockedFs, { source, saveAs: "png" }));
   afterAll(() => writeFileSpy.mockClear());
   test("crawls / and saves as index.png to the same folder", () => {
-    expect(writeFileSpy).toHaveBeenCalledTimes(1);
-    expect(writeFileSpy.mock.calls[0][0]).toEqual(cwd + `/${source}/index.png`);
+    expect(mockedFs.existsSync(cwd + `/${source}/index.png`)).toEqual(true);
+    mockedFs.unlinkSync(cwd + `/${source}/index.png`);
   });
   test("copies (original) index.html to 200.html", () => {
     expect(createReadStreamMock.mock.calls).toEqual([
@@ -98,10 +98,8 @@ describe("saveAs jpeg", () => {
   beforeAll(() => snapRun(mockedFs, { source, saveAs: "jpeg" }));
   afterAll(() => writeFileSpy.mockClear());
   test("crawls / and saves as index.png to the same folder", () => {
-    expect(writeFileSpy).toHaveBeenCalledTimes(1);
-    expect(writeFileSpy.mock.calls[0][0]).toEqual(
-      cwd + `/${source}/index.jpeg`
-    );
+    expect(mockedFs.existsSync(cwd + `/${source}/index.jpeg`)).toEqual(true);
+    mockedFs.unlinkSync(cwd + `/${source}/index.jpeg`);
   });
   test("copies (original) index.html to 200.html", () => {
     expect(createReadStreamMock.mock.calls).toEqual([
