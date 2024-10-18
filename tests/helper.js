@@ -9,7 +9,12 @@ const mockFs = () => {
   const createWriteStreamMock = jest.fn();
   const writeFileSyncMock = jest.fn();
   const fs = {
-    existsSync: nativeFs.existsSync,
+    existsSync: path => {
+      return nativeFs.existsSync(path);
+    },
+    unlinkSync: path => {
+      return nativeFs.unlinkSync(path);
+    },
     createReadStream: path => {
       createReadStreamMock(path.replace(cwd, "").replace(/\\/g, "/"));
       return nativeFs.createReadStream(path);
