@@ -9,17 +9,22 @@ const mockFs = () => {
   const createWriteStreamMock = jest.fn();
   const writeFileSyncMock = jest.fn();
   const fs = {
-    existsSync: nativeFs.existsSync,
+    existsSync: path => {
+      return nativeFs.existsSync(path);
+    },
+    unlinkSync: path => {
+      return nativeFs.unlinkSync(path);
+    },
     createReadStream: path => {
-      createReadStreamMock(path.replace(cwd, ""));
+      createReadStreamMock(path.replace(cwd, "").replace(/\\/g, "/"));
       return nativeFs.createReadStream(path);
     },
     createWriteStream: path => {
-      createWriteStreamMock(path.replace(cwd, ""));
+      createWriteStreamMock(path.replace(cwd, "").replace(/\\/g, "/"));
       return devNullStream;
     },
     writeFileSync: (path, content) => {
-      writeFileSyncMock(path.replace(cwd, ""), content);
+      writeFileSyncMock(path.replace(cwd, "").replace(/\\/g, "/"), content);
     }
   };
   const filesCreated = () => writeFileSyncMock.mock.calls.length;
