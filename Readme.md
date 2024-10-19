@@ -6,7 +6,7 @@
 >
 > ⚠️ This project uses **yarn** for build and tests. To install it : `npm install --global yarn`. Then `yarn test` to run tests.
 
-## react-snap-test [![Node.js CI](https://github.com/marcoandre1/react-snap/actions/workflows/node.js.yml/badge.svg)] (https://github.com/marcoandre1/react-snap/actions/workflows/node.js.yml) [![NPM version](https://img.shields.io/npm/v/react-snap-test.svg)](https://www.npmjs.com/package/react-snap-test) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](#badge) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
+## react-snap-test [![Node.js CI](https://github.com/marcoandre1/react-snap/actions/workflows/node.js.yml/badge.svg)](https://github.com/marcoandre1/react-snap/actions/workflows/node.js.yml) [![NPM version](https://img.shields.io/npm/v/react-snap-test.svg)](https://www.npmjs.com/package/react-snap-test) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](#badge) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
 Pre-renders a web app into static HTML. Uses [Headless Chrome](https://github.com/GoogleChrome/puppeteer) to crawl all available links starting from the root. Heavily inspired by [prep](https://github.com/graphcool/prep) and [react-snapshot](https://github.com/geelen/react-snapshot), but written from scratch. Uses best practices to get the best loading performance.
 
