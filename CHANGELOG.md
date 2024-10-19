@@ -1,7 +1,7 @@
 # 1.23.11
 
-- Switch [html-minifier]() to [html-minifier-terser]() fixes #22 (@marcoandre1)
-- Bump clean-css and express (@marcoandre1)
+- Switched [html-minifier](https://www.npmjs.com/package/html-minifier) to [html-minifier-terser](https://www.npmjs.com/package/html-minifier-terser) fixes #22 (@marcoandre1)
+- Bumped clean-css and express (@marcoandre1)
 
 # 1.23.10
 
