@@ -1,3 +1,8 @@
+# 1.23.11
+
+- Switch [html-minifier]() to [html-minifier-terser]() fixes #22 (@marcoandre1)
+- Bump clean-css and express (@marcoandre1)
+
 # 1.23.10
 
 - Updated README to fix React 18 hydration bug (@marcoandre1)
