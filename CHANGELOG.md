@@ -1,3 +1,9 @@
+# 1.23.10
+
+- Updated README to fix React 18 hydration bug (@marcoandre1)
+- Added build and test pipeline (@marcoandre1)
+- Fixed all test for node 20 (@marcoandre1)
+
 # 1.23.9
 
 - Bump minimalcss-test from 0.11.6 to 0.11.7 (@marcoandre1)
