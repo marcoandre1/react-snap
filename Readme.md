@@ -6,7 +6,7 @@
 >
 > ⚠️ This project uses **yarn** for build and tests. To install it : `npm install --global yarn`. Then `yarn test` to run tests.
 
-## react-snap [![NPM version](https://img.shields.io/npm/v/react-snap-test.svg)](https://www.npmjs.com/package/react-snap)
+## react-snap-test [![Node.js CI](https://github.com/marcoandre1/react-snap/actions/workflows/node.js.yml/badge.svg)] (https://github.com/marcoandre1/react-snap/actions/workflows/node.js.yml) [![NPM version](https://img.shields.io/npm/v/react-snap-test.svg)](https://www.npmjs.com/package/react-snap-test) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](#badge) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
 Pre-renders a web app into static HTML. Uses [Headless Chrome](https://github.com/GoogleChrome/puppeteer) to crawl all available links starting from the root. Heavily inspired by [prep](https://github.com/graphcool/prep) and [react-snapshot](https://github.com/geelen/react-snapshot), but written from scratch. Uses best practices to get the best loading performance.
 
@@ -26,7 +26,7 @@ Pre-renders a web app into static HTML. Uses [Headless Chrome](https://github.co
 Install:
 
 ```sh
-yarn add --dev react-snap
+yarn add --dev react-snap-test
 ```
 
 Change `package.json`:
@@ -52,6 +52,27 @@ if (rootElement.hasChildNodes()) {
 
 That's it!
 
+## 🆕 React 18
+
+- Fix [#162 [BUG]](https://github.com/marcoandre1/marcoandre1.github.io/issues/162): hydrateRoot(...): Target container is not a DOM element. **Particular attention to the parameters inversion in the NEW hydrate function:** `hydrate(<App tab="home" />, container)` vs `hydrateRoot(container, <App tab="home" />)`.
+
+  Extract from [How to Upgrade to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html):
+
+  > Finally, if your app uses server-side rendering with hydration, upgrade `hydrate` to `hydrateRoot`:
+  >
+  > ```js
+  > // Before
+  > import { hydrate } from 'react-dom';
+  > const container = document.getElementById('app');
+  > hydrate(<App tab="home" />, container);
+  >
+  > // After
+  > import { hydrateRoot } from 'react-dom/client';
+  > const container = document.getElementById('app');
+  > const root = hydrateRoot(container, <App tab="home" />);
+  > // Unlike with createRoot, you don't need a separate root.render() call here.
+  > ```
+
 ## Basic usage with Preact
 
 To do [hydration in Preact you need to use this trick](https://github.com/developit/preact/issues/1060#issuecomment-389987994):
@@ -70,7 +91,7 @@ if (rootElement.hasChildNodes()) {
 Install:
 
 ```sh
-yarn add --dev react-snap
+yarn add --dev react-snap-test
 ```
 
 Change `package.json`:
