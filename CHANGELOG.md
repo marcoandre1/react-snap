@@ -1,3 +1,26 @@
+# 1.23.12
+
+- Normalize all the line endings (@marcoandre1)
+  When running `react-snap` with yarn on Github (ubuntu), got the error :
+
+  ```console
+  $ react-snap
+  /usr/bin/env: ‘node\r’: No such file or directory
+  error Command failed with exit code 127.
+  ```
+
+  According to <https://github.com/yarnpkg/yarn/issues/8106>, the problem seems to be that Unix line endings should be `LF`.
+
+  I followed the [Configuring Git to handle line endings](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) from GitHub
+
+  1. Add `.gitattributes`
+  2. Run :
+
+    ```console
+    git rm -rf --cached .
+    git reset --hard HEAD
+    ```
+
 # 1.23.11
 
 - Switched [html-minifier](https://www.npmjs.com/package/html-minifier) to [html-minifier-terser](https://www.npmjs.com/package/html-minifier-terser) fixes #22 (@marcoandre1)
