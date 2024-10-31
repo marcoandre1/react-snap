@@ -39,7 +39,8 @@ const augmentTimeoutError = (message, tracker) => {
     } else {
       message += `\nBut there are no pending connections`;
     }
-  } else if (message.startsWith("Exceeded timeout of 5000 ms for a hook")) {
+  } else {
+    message += `\nAugment Timeout Error`;
     const urls = tracker.urls();
     if (urls.length > 1) {
       message += `\nTracked URLs that have not finished: ${urls.join(", ")}`;
