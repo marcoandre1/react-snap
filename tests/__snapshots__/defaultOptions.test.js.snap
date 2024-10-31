@@ -50,6 +50,6 @@ exports[`defaultOptions 1`] = `
     "height": 850,
     "width": 480,
   },
-  "waitFor": false,
+  "waitForTimeout": 1000,
 }
 `;
