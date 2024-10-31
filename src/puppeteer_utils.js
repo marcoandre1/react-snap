@@ -201,6 +201,7 @@ const crawl = async opt => {
     }
   };
 
+  // Launch the browser
   const browser = await puppeteer.launch({
     headless: options.headless,
     args: options.puppeteerArgs,
@@ -226,8 +227,9 @@ const crawl = async opt => {
 
     if (!shuttingDown && !skipExistingFile) {
       try {
+        // Open a new blank page
         const page = await browser.newPage();
-        const client = await page.target().createCDPSession();
+        const client = await page.createCDPSession();
         await client.send("ServiceWorker.disable");
         await page.setCacheEnabled(options.puppeteer.cache);
         if (options.viewport) await page.setViewport(options.viewport);
@@ -246,14 +248,14 @@ const crawl = async opt => {
         await page.setUserAgent(options.userAgent);
         const tracker = createTracker(page);
         try {
-          await page.goto(pageUrl);
+          await page.goto(pageUrl, { timeout: 5000 });
         } catch (e) {
           e.message = augmentTimeoutError(e.message, tracker);
           throw e;
         } finally {
           tracker.dispose();
         }
-        if (options.waitFor) await page.waitFor(options.waitFor);
+        if (options.waitForNavigation) await page.waitForNavigation({ timeout: options.waitForTimeout });
         if (options.crawl) {
           const links = await getLinks({ page });
           links.forEach(addToQueue);

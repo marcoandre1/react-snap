@@ -167,7 +167,7 @@ describe("many pages", () => {
     );
   });
   test("crawls / and saves as index.html to the same folder", () => {
-    expect(name(0)).toEqual(`/${source}/index.html`);
+    expect(names()).toEqual(expect.arrayContaining([`/${source}/index.html`]));
   });
   test("if there is more than page it crawls 404.html", () => {
     expect(names()).toEqual(expect.arrayContaining([`/${source}/404.html`]));

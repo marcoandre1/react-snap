@@ -1,3 +1,8 @@
+# 1.23.13
+
+- I had removed the `waitUntil: "networkidle0"` option in a previous release. Based on another package ([minimal-css-test](https://www.npmjs.com/package/minimalcss-test)) I had been working on, I came to the conclusion that this option was not working properly when using puppeteer +20. However, tests seem ok. The purpose of the upgrade is to fix rendering when using [react-helmet](https://www.npmjs.com/package/react-helmet) because I noticed `react-snap-test` is not waiting for [react-helmet](https://www.npmjs.com/package/react-helmet). Hopefully, this release fixes this.
+- Add favicon.ico now required by puppeteer (@marcoandre1)
+
 # 1.23.12
 
 - Normalize all the line endings (@marcoandre1)

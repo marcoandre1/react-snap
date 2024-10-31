@@ -64,7 +64,7 @@ const defaultOptions = {
   //# feature creeps to generate screenshots
   saveAs: "html",
   crawl: true,
-  waitFor: false,
+  waitForTimeout: 1000,
   externalServer: false,
   //# even more workarounds
   removeStyleTags: false,
@@ -599,6 +599,7 @@ const fixFormFields = ({ page }) => {
   });
 };
 
+// Function to save page as html, the page is already rendered
 const saveAsHtml = async ({ page, filePath, options, route, fs }) => {
   let content = await page.content();
   content = content.replace(/react-snap-onload/g, "onload");
@@ -654,10 +655,15 @@ const run = async (userOptions, { fs } = { fs: nativeFs }) => {
     return Promise.reject(e.message);
   }
 
+  // Source directory, default is "build"
   const sourceDir = path.normalize(`${process.cwd()}/${options.source}`);
+
+  // Destination directory, default is source directory
   const destinationDir = path.normalize(
     `${process.cwd()}/${options.destination}`
   );
+
+  // function to start server at source directory
   const startServer = options => {
     const app = express()
       .use(options.publicPath, serveStatic(sourceDir))
@@ -667,6 +673,7 @@ const run = async (userOptions, { fs } = { fs: nativeFs }) => {
     return server;
   };
 
+  // Check if 200.html is present in the sourceDir
   if (
     destinationDir === sourceDir &&
     options.saveAs === "html" &&
@@ -678,10 +685,12 @@ const run = async (userOptions, { fs } = { fs: nativeFs }) => {
     return Promise.reject("");
   }
 
+  // Copy index.html to 200.html
   fs.createReadStream(path.join(sourceDir, "index.html")).pipe(
     fs.createWriteStream(path.join(sourceDir, "200.html"))
   );
 
+  // Copy 200.html to destinationDir
   if (destinationDir !== sourceDir && options.saveAs === "html") {
     mkdirp.sync(destinationDir);
     fs.createReadStream(path.join(sourceDir, "index.html")).pipe(
@@ -689,14 +698,20 @@ const run = async (userOptions, { fs } = { fs: nativeFs }) => {
     );
   }
 
+  // Start server
   const server = options.externalServer ? null : startServer(options);
 
+  // Base path for express server, default is 45678
   const basePath = `http://localhost:${options.port}`;
+
+  // Public path for app, default is "/"
   const publicPath = options.publicPath;
+  
   const ajaxCache = {};
   const { http2PushManifest } = options;
   const http2PushManifestItems = {};
 
+  // crawl function is defined in puppeteer_utils.js and is reponsible for crawling the app
   await crawl({
     options,
     basePath,
@@ -831,8 +846,13 @@ const run = async (userOptions, { fs } = { fs: nativeFs }) => {
       if (options.fixInsertRule) await fixInsertRule({ page });
       await fixFormFields({ page });
 
+      // publicPath default is "/", unless specified
       let routePath = route.replace(publicPath, "");
+
+      // destinationDir default is "build" folder, or source folder if specified
       let filePath = path.join(destinationDir, routePath);
+
+      // Default action is save as html
       if (options.saveAs === "html") {
         await saveAsHtml({ page, filePath, options, route, fs });
         let newRoute = await page.evaluate(() => location.toString());
