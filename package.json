@@ -1,6 +1,6 @@
 {
   "name": "react-snap-test",
-  "version": "1.23.12",
+  "version": "1.23.13",
   "description": "Zero-configuration framework-agnostic static prerendering for SPAs",
   "main": "index.js",
   "author": "stereobooster",
