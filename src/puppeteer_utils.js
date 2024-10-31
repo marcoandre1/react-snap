@@ -248,14 +248,14 @@ const crawl = async opt => {
         await page.setUserAgent(options.userAgent);
         const tracker = createTracker(page);
         try {
-          await page.goto(pageUrl, { waitUntil: "networkidle0" });
+          await page.goto(pageUrl, { timeout: 5000 });
         } catch (e) {
           e.message = augmentTimeoutError(e.message, tracker);
           throw e;
         } finally {
           tracker.dispose();
         }
-        if (options.waitFor) await page.waitFor(options.waitFor);
+        if (options.waitForNavigation) await page.waitForNavigation({ timeout: options.waitForTimeout });
         if (options.crawl) {
           const links = await getLinks({ page });
           links.forEach(addToQueue);

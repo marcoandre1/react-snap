@@ -64,7 +64,7 @@ const defaultOptions = {
   //# feature creeps to generate screenshots
   saveAs: "html",
   crawl: true,
-  waitFor: false,
+  waitForTimeout: 1000,
   externalServer: false,
   //# even more workarounds
   removeStyleTags: false,
